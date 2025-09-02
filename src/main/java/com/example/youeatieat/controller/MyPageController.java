@@ -43,10 +43,10 @@ public class MyPageController {
     public String GoToModify() {
         MemberDTO member = (MemberDTO) session.getAttribute("member");
         if(member.getMemberKakaoEmail()==null){
-            return "/mypage/modify";
+            return "mypage/modify";
         }
         else {
-            return "/mypage/kakao-modify";
+            return "mypage/kakao-modify";
         }
     }
     @GetMapping("subcribe")

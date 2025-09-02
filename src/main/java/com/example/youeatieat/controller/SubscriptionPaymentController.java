@@ -22,12 +22,12 @@ public class SubscriptionPaymentController {
     public String pay(SubscriptionPaymentDTO subscriptionPaymentDTO, RedirectAttributes redirectAttributes) {
         MemberDTO member =(MemberDTO)session.getAttribute("member");
         if(member.isMemberVerified()){
-            return ("/main/body");
+            return ("main/body");
         }
         subscriptionPaymentDTO.setMemberId(member.getId());
 
         subscriptionPaymentService.addSubscriptionPayment(subscriptionPaymentDTO);
-        return "/together-product/subscription-ok";
+        return "together-product/subscription-ok";
     }
 
 }

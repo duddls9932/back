@@ -4,17 +4,14 @@ import com.example.youeatieat.common.exception.NoProductException;
 import com.example.youeatieat.common.exception.handler.NoCategoryException;
 import com.example.youeatieat.dto.*;
 import com.example.youeatieat.service.*;
-import com.example.youeatieat.util.Search;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,7 +36,7 @@ public class ProductController {
         model.addAttribute("member", memberDTO);
 
         System.out.println(memberDTO);
-        return "/together-product/list";
+        return "together-product/list";
     }
 
 //    베스트 목록으로 이동
@@ -61,7 +58,7 @@ public class ProductController {
 
         model.addAttribute("category", category);
 
-        return "/together-product/by-category-list";
+        return "together-product/by-category-list";
     }
 
 
@@ -91,7 +88,7 @@ public class ProductController {
         }
         model.addAttribute("liked", liked);
 
-        return "/together-product/detail";
+        return "together-product/detail";
     }
 
 //    banner
@@ -101,7 +98,7 @@ public class ProductController {
         List<BannerWithFileDTO> banners = adminBannerService.getBannerFiles();
 //        banners.forEach(b -> System.out.println("배너ID=" + b.getBannerId() + ", files=" + b.getFiles()));
         model.addAttribute("banners", banners);
-        return "/together-product/banner";
+        return "together-product/banner";
     }
 
 }

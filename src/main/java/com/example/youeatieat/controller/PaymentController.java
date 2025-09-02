@@ -1,13 +1,8 @@
 package com.example.youeatieat.controller;
 
-import com.example.youeatieat.common.exception.NoProductException;
 import com.example.youeatieat.dto.CartDTO;
 import com.example.youeatieat.dto.MemberDTO;
-import com.example.youeatieat.dto.NoticeDTO;
-import com.example.youeatieat.dto.ProductDTO;
 import com.example.youeatieat.service.CartServiceImpl;
-import com.example.youeatieat.service.NoticeServiceImpl;
-import com.example.youeatieat.service.ProductServiceImpl;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -56,7 +50,7 @@ public class PaymentController {
         MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
         model.addAttribute("member", memberDTO);
 
-        return "/together-product/payment-ok";
+        return "together-product/payment-ok";
     }
 
 

@@ -2,19 +2,17 @@ package com.example.youeatieat.controller;
 
 import com.example.youeatieat.dto.CartDTO;
 import com.example.youeatieat.dto.MemberDTO;
-import com.example.youeatieat.mapper.CartMapper;
 import com.example.youeatieat.repository.CartDAO;
 import com.example.youeatieat.service.CartService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 @Controller
 @RequestMapping("/cart")
@@ -37,7 +35,7 @@ public class CartController {
                 .sum();
         model.addAttribute("totalPrice", totalPrice);
         System.out.println(member);
-        return "/mypage/cart";
+        return "mypage/cart";
     }
 
 //    @PostMapping("cart")
