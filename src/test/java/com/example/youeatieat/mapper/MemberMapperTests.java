@@ -70,5 +70,5 @@ public class MemberMapperTests {
 //        log.info("kakaoLoginTest:{}",memberDTO.getMemberName());
 
 
-    }
+//    }
 }
