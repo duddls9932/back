@@ -12,7 +12,7 @@
 </head>
 <body th:attr="data-member-verified=${session.member.memberVerified}">
 
-    <header th:replace="~{/main/header.html :: header}"></header>
+    <header th:replace="~{main/header.html :: header}"></header>
     <form id ="pay-form" action="/subscription/pay" method="post">
     <div class="body-wrap">
         <div class="body">
@@ -138,7 +138,7 @@
     </div>
 </form>
 
-<footer th:replace="~{/main/footer.html :: div.footer-big}"></footer>
+<footer th:replace="~{main/footer.html :: div.footer-big}"></footer>
 
 </body>
 <script src="/js/mypage/subcribe/event.js"></script>

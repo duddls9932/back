@@ -13,7 +13,7 @@
 <body>
     <div class="sub">
         <div>
-            <header th:replace="~{/main/header.html :: header}"></header>
+            <header th:replace="~{main/header.html :: header}"></header>
             <div class="layout-wrapper">
                 <div class="container">
                     <div class="payment-section">
@@ -298,7 +298,7 @@
             </div>
         </div>
     </div>
-    <footer th:replace="~{/main/footer.html :: div.footer-big}"></footer>
+    <footer th:replace="~{main/footer.html :: div.footer-big}"></footer>
 </body>
 <script th:inline="javascript">
     const selectedCarts = [[${selectedCarts}]]
